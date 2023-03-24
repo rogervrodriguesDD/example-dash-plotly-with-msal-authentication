@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1> Example - Authentication Page</h1>
+
+    <li><a href='{{ auth_url }}'>Clique here to authenticate</a></li>
+
+    {% if config.get("B2C_RESET_PASSWORD_AUTHORITY") %}
+    <li><a href='{{_build_auth_url(authority=config["B2C_RESET_PASSWORD_AUTHORITY"])}}'>Reset Password</a></li>
+    {% endif %}
+
+    <hr>
+    <footer style="text-align: right"> Author: Roger Rodrigues</footer>
+</body>
+</html>
